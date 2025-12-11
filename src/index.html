@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Coin Mart</title>
+
+    <style>
+        /* Hide scrollbar on mobile */
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Sticky columns fix */
+        
+        .sticky-col {
+            position: sticky;
+            background: #000;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="text-white bg-black">
+
+    <!-- HEADER -->
+    <header class="w-full bg-[#0D111C] border-b border-[#1C2433]">
+        <div class="px-4 h-[72px] flex items-center justify-between">
+
+            <!-- LEFT -->
+            <div class="flex items-center gap-4 sm:gap-8">
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <img src="./assets/img/coinmarketcap-logo.png" class="w-8 h-8 logo-white" />
+
+                    <style>
+                        .logo-white {
+                            filter: brightness(0) invert(1);
+                        }
+                    </style>
+
+                    <h1 class="hidden text-xl font-semibold text-white sm:block">CoinMarketCap</h1>
+                </div>
+
+                <!-- MENU -->
+                <nav class="items-center hidden gap-6 text-sm text-gray-300 lg:flex">
+                    <a href="#" class="hover:text-white">Cryptocurrencies</a>
+                    <a href="#" class="hover:text-white">Dashboards</a>
+                    <a href="#" class="hover:text-white">DexScan</a>
+                    <a href="#" class="hover:text-white">Exchanges</a>
+                    <span class="cursor-pointer hover:text-white">More ▾</span>
+                </nav>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <span class="hidden text-sm text-gray-300 cursor-pointer sm:block hover:text-white">⭐ Portfolio</span>
+                <span class="hidden text-sm text-gray-300 cursor-pointer sm:block hover:text-white">★ Watchlist</span>
+
+                <div class="hidden md:flex items-center w-80 bg-[#1C2433] px-3 py-2 rounded-lg">
+                    <input type="text" placeholder="Search" class="w-full text-sm text-white bg-transparent focus:outline-none">
+                </div>
+
+                <button class="hidden px-4 py-2 text-sm text-white bg-blue-400 rounded-lg sm:block">CMC</button>
+                <button class="hidden sm:block bg-[#3861FB] text-white px-4 py-2 rounded-lg text-sm">Log In</button>
+
+                <!-- MOBILE MENU ICON -->
+                <div class="text-2xl text-white cursor-pointer lg:hidden">☰</div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- SUB NAV -->
+    <div class="w-full bg-[#0D111C] border-b border-[#1C2433] overflow-x-auto no-scrollbar">
+        <div class="flex gap-6 px-4 text-sm text-gray-400 whitespace-nowrap">
+            <button class="py-4 text-white border-b-2 border-blue-500">Top</button>
+            <button class="py-4 hover:text-white">Trending</button>
+            <button class="py-4 hover:text-white">Most Visited</button>
+            <button class="py-4 hover:text-white">New</button>
+            <button class="py-4 hover:text-white">Gainers</button>
+            <button class="py-4 hover:text-white">Real-World Assets</button>
+            <button class="py-4 hover:text-white">More</button>
+        </div>
+    </div>
+
+
+    <!-- OVERVIEW CARDS -->
+    <section class="px-4 mt-6">
+        <div class="flex gap-4 overflow-x-auto no-scrollbar md:grid md:grid-cols-3 lg:grid-cols-5 md:overflow-visible">
+
+            <!-- CARD -->
+            <div class="min-w-[200px] bg-[#111826] rounded-xl p-4 text-white">
+                <p class="text-sm text-gray-400">Market Cap</p>
+                <h2 class="mt-1 text-2xl font-semibold">$3.15T <span class="text-base text-green-400">▲ 2.31%</span></h2>
+                <div class="flex items-center justify-center h-12 mt-3">
+                    <img src="https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/1027.svg" class="w-60" />
+                </div>
+            </div>
+
+            <!-- Repeatable cards kept same -->
+            <div class="min-w-[200px] bg-[#111826] rounded-xl p-4 text-white">
+                <p class="text-sm text-gray-400">CMC20</p>
+                <h2 class="mt-1 text-2xl font-semibold">$197.31 <span class="text-base text-green-400">▲ 2.63%</span></h2>
+                <div class="h-12 mt-3 rounded bg-green-400/20"></div>
+            </div>
+
+            <div class="min-w-[200px] bg-[#111826] rounded-xl p-4 text-white">
+                <p class="text-sm text-gray-400">Fear & Greed</p>
+                <h2 class="mt-1 text-2xl font-semibold">30 Fear</h2>
+                <div class="h-12 mt-3 rounded bg-yellow-400/20"></div>
+            </div>
+
+            <div class="min-w-[200px] bg-[#111826] rounded-xl p-4 text-white">
+                <p class="text-sm text-gray-400">Altcoin Season</p>
+                <h2 class="mt-1 text-2xl font-semibold">19 / 100</h2>
+                <div class="h-12 mt-3 rounded bg-purple-400/20"></div>
+            </div>
+
+            <div class="min-w-[200px] bg-[#111826] rounded-xl p-4 text-white">
+                <p class="text-sm text-gray-400">Average Crypto RSI</p>
+                <h2 class="mt-1 text-2xl font-semibold">52.85</h2>
+                <div class="h-12 mt-3 rounded bg-red-400/20"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TOPIC TAGS -->
+    <div class="px-4 mt-4">
+        <div class="flex gap-3 py-1 overflow-x-auto scrollbar-none whitespace-nowrap">
+            <span class="inline-block bg-[#1C2433] text-gray-300 px-4 py-2 rounded-full text-sm min-w-max">Topic • Market Spikes Before FOMC Meeting</span>
+            <span class="inline-block bg-[#1C2433] text-gray-300 px-4 py-2 rounded-full text-sm min-w-max">How much were BTC liquidations today?</span>
+            <span class="inline-block bg-[#1C2433] text-gray-300 px-4 py-2 rounded-full text-sm min-w-max">Why is the market up today?</span>
+            <span class="inline-block bg-[#1C2433] text-gray-300 px-4 py-2 rounded-full text-sm min-w-max">Topic • Market Spikes Before FOMC Meeting</span>
+            <span class="inline-block bg-[#1C2433] text-gray-300 px-4 py-2 rounded-full text-sm min-w-max">How much were BTC liquidations today?</span>
+            <span class="inline-block bg-[#1C2433] text-gray-300 px-4 py-2 rounded-full text-sm min-w-max">Why is the market up today?</span>
+        </div>
+    </div>
+
+    <!-- Tailwind CSS for hiding scrollbar -->
+    <style>
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+
+
+
+    <!-- MAIN TABLE -->
+    <div class="w-full px-4 py-4 text-white">
+
+        <!-- TOP BAR -->
+        <div class="flex flex-wrap items-center justify-between w-full gap-3 py-2 text-sm">
+
+            <!-- LEFT NETWORK BUTTONS -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                <button class="px-4 py-1.5 rounded-lg bg-blue-900/40 text-blue-300 flex items-center gap-1">
+                🌐 <span>All Networks</span>
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300 flex items-center gap-1">
+                🟡 BSC
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300 flex items-center gap-1">
+                🟣 Solana
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300 flex items-center gap-1">
+                🔵 Base
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300 flex items-center gap-1">
+                ⚪ Ethereum
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300">
+                More ▼
+            </button>
+            </div>
+
+            <!-- RIGHT SORT/FILTER BUTTONS -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300">
+                Market Cap
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300">
+                Volume (24h)
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300 flex items-center gap-1">
+                🔍 Filters
+            </button>
+
+                <button class="px-4 py-1.5 rounded-lg bg-[#1a1d29] text-gray-300 flex items-center gap-1">
+                📊 Columns
+            </button>
+            </div>
+        </div>
+
+        <!-- RESPONSIVE TABLE -->
+        <section class="mt-6 overflow-x-auto bg-black no-scrollbar">
+
+            <table class="w-full min-w-[1000px] text-left text-gray-300">
+                <thead>
+                    <tr class="border-b border-gray-800">
+                        <th class="sticky left-0 z-20 px-2 py-3 bg-black">★</th>
+                        <th class="sticky z-20 px-2 py-3 bg-black left-8">#</th>
+                        <th class="sticky left-16 px-2 py-3 bg-black z-20 min-w-[180px]">Name</th>
+                        <th class="px-2 py-3">Price</th>
+                        <th class="px-2 py-3">1h %</th>
+                        <th class="px-2 py-3">24h %</th>
+                        <th class="px-2 py-3">7d %</th>
+                        <th class="px-2 py-3">Market Cap</th>
+                        <th class="px-2 py-3">Volume(24h)</th>
+                        <th class="px-2 py-3">Circulating Supply</th>
+                        <th class="px-2 py-3">Last 7 Days</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- ROW 1 -->
+                    <tr class="border-b border-gray-800">
+                        <td class="sticky left-0 z-10 px-2 py-4 bg-black">☆</td>
+                        <td class="sticky z-10 px-2 py-4 bg-black left-8">1</td>
+                        <td class="sticky z-10 px-2 py-4 bg-black left-16">
+                            <div class="flex items-center gap-2">
+                                <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" class="w-6" />
+                                <div>
+                                    <div class="font-semibold">Bitcoin</div>
+                                    <div class="text-sm text-gray-400">BTC</div>
+                                </div>
+                                <span class="px-2 py-1 ml-auto text-sm text-gray-300 rounded">Buy</span>
+                            </div>
+                        </td>
+                        <td class="px-2">$92,611.00</td>
+                        <td class="px-2 text-red-400">▼0.05%</td>
+                        <td class="px-2 text-green-400">▲2.69%</td>
+                        <td class="px-2 text-red-400">▼0.33%</td>
+                        <td class="px-2">$1.8T</td>
+                        <td class="px-2">$64.9B</td>
+                        <td class="px-2">19.96M BTC</td>
+                        <td class="px-2">
+                            <img class="w-24" src="https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/1.svg">
+                        </td>
+                    </tr>
+
+                    <!-- ROW 2 -->
+                    <tr class="border-b border-gray-800">
+                        <td class="sticky left-0 z-10 px-2 py-4 bg-black">☆</td>
+                        <td class="sticky z-10 px-2 py-4 bg-black left-8">2</td>
+                        <td class="sticky z-10 px-2 py-4 bg-black left-16">
+                            <div class="flex items-center gap-2">
+                                <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" class="w-6" />
+                                <div>
+                                    <div class="font-semibold">Ethereum</div>
+                                    <div class="text-sm text-gray-400">ETH</div>
+                                </div>
+                                <span class="px-2 py-1 ml-auto text-sm text-gray-300 rounded">Buy</span>
+                            </div>
+                        </td>
+                        <td class="px-2">$3,321.67</td>
+                        <td class="px-2 text-red-400">▼0.19%</td>
+                        <td class="px-2 text-green-400">▲6.95%</td>
+                        <td class="px-2 text-green-400">▲8.81%</td>
+                        <td class="px-2">$400B</td>
+                        <td class="px-2">$32B</td>
+                        <td class="px-2">120.6M ETH</td>
+                        <td class="px-2">
+                            <img class="w-24" src="https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/1027.svg">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <div class="flex flex-col items-center gap-4 px-4 py-6 border-t border-gray-800 sm:flex-row">
+        <!-- LEFT TEXT -->
+        <p class="text-sm text-gray-400 sm:mr-auto">
+            Showing 1 - 100 out of 9005
+        </p>
+
+        <!-- CENTERED PAGES -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mr-auto">
+            <button class="px-3 py-1 text-gray-400 border border-gray-700 rounded hover:bg-gray-800">&lt;</button>
+            <button class="px-3 py-1 text-white bg-blue-600 rounded">1</button>
+            <button class="px-3 py-1 text-gray-300 border border-gray-700 rounded hover:bg-gray-800">2</button>
+            <button class="px-3 py-1 text-gray-300 border border-gray-700 rounded hover:bg-gray-800">3</button>
+            <span class="px-2 text-gray-500">...</span>
+            <button class="px-3 py-1 text-gray-300 border border-gray-700 rounded hover:bg-gray-800">91</button>
+            <button class="px-3 py-1 text-gray-400 border border-gray-700 rounded hover:bg-gray-800">&gt;</button>
+        </div>
+    </div>
+
+
+
+    <!-- MARKET INFO -->
+    <div class="px-4 py-10 border-t border-gray-800">
+        <h2 class="mb-3 text-2xl font-bold">
+            Today's Cryptocurrency Prices by Market Cap
+        </h2>
+
+        <p class="mb-2 text-gray-400">
+            The global crypto market cap is
+            <span class="font-semibold text-white">$3.15T</span>, a <span class="text-green-400">▲1.87%</span> increase over the last day.
+            <a href="#" class="ml-1 text-blue-400 hover:underline">Read More</a>
+        </p>
+
+        <p class="text-gray-400">
+            Find out how we work by clicking here.
+            <a href="#" class="ml-1 text-blue-400 hover:underline">Read More</a>
+        </p>
+    </div>
+
+    <!-- SUBSCRIBE SECTION -->
+    <section class="relative px-6 py-20 bg-[#2b2f3a] overflow-hidden">
+
+        <div class="relative grid gap-10 md:grid-cols-2">
+
+            <!-- LEFT CONTENT -->
+            <div class="z-10 max-w-xl">
+                <h2 class="mb-4 text-3xl font-bold">
+                    Stay on top of crypto. All the time, any time.
+                </h2>
+
+                <p class="mb-6 text-gray-300">
+                    Please keep me updated by email with the latest crypto news, research findings, reward programs, event updates, coin listings and more information from CoinMarketCap.
+                </p>
+
+                <div class="flex flex-col gap-3 sm:flex-row">
+                    <input type="email" placeholder="Enter your e-mail address" class="w-full px-4 py-3 text-white bg-[#1c1f2a] border border-gray-700 rounded focus:outline-none focus:border-blue-500" />
+                    <button class="px-6 py-3 font-semibold text-white bg-blue-600 rounded hover:bg-blue-700">
+                    Subscribe
+                </button>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE (DECORATIVE) -->
+            <div class="absolute right-0 hidden -translate-y-1/2 pointer-events-none top-1/2 md:block">
+                <img src="https://s2.coinmarketcap.com/static/cloud/img/newsletter_bg_dark.svg?_=4285dd9" alt="" class="w-[520px] lg:w-[620px] opacity-90" loading="lazy" />
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="px-6 py-16 text-gray-300 bg-gradient-to-b from-[#0b1020] to-[#050814] border-t border-[#1c2433]">
+
+        <!-- ROW: logo left, links grouped to right -->
+        <div class="flex flex-col gap-12 lg:flex-row lg:items-start">
+
+            <!-- LOGO + SETTINGS (LEFT) -->
+            <div class="flex-shrink-0 space-y-6">
+                <div class="flex items-center gap-2">
+
+                    <img src="../CoinMart/img/coinmarketcap-logo.png" class="w-8 filter brightness-0 invert">
+                    <span class="text-lg font-semibold text-white">CoinMarketCap</span>
+                </div>
+
+                <div class="flex gap-3">
+                    <button class="flex items-center gap-2 px-4 py-2 text-sm bg-[#1c2433] rounded-full hover:bg-[#273149]">
+          🌐 English
+        </button>
+                    <button class="flex items-center gap-2 px-4 py-2 text-sm bg-[#1c2433] rounded-full hover:bg-[#273149]">
+          💲 USD
+        </button>
+                </div>
+            </div>
+
+            <!-- LINKS GROUP (pushed to right on large screens) -->
+            <div class="w-full lg:ml-auto lg:w-auto">
+
+                <!-- grid of 4 link columns; on small screens becomes 2 cols -->
+                <div class="grid grid-cols-2 gap-10 sm:grid-cols-4">
+
+                    <!-- PRODUCTS -->
+                    <div class="text-left lg:text-left">
+                        <h4 class="mb-4 text-sm font-semibold text-white uppercase">Products</h4>
+                        <ul class="space-y-3">
+                            <li class="cursor-pointer hover:text-white">Academy</li>
+                            <li class="cursor-pointer hover:text-white">Advertise</li>
+                            <li class="cursor-pointer hover:text-white">CMC Labs</li>
+                            <li class="cursor-pointer hover:text-white">CMC Updates</li>
+                            <li class="cursor-pointer hover:text-white">Bitcoin ETFs</li>
+                            <li class="cursor-pointer hover:text-white">Crypto API</li>
+                        </ul>
+                    </div>
+
+                    <!-- COMPANY -->
+                    <div class="text-left lg:text-left">
+                        <h4 class="mb-4 text-sm font-semibold text-white uppercase">Company</h4>
+                        <ul class="space-y-3">
+                            <li class="cursor-pointer hover:text-white">About us</li>
+                            <li class="cursor-pointer hover:text-white">Terms of use</li>
+                            <li class="cursor-pointer hover:text-white">Privacy Policy</li>
+                            <li class="cursor-pointer hover:text-white">Cookie preferences</li>
+                            <li class="cursor-pointer hover:text-white">Community Rules</li>
+                            <li class="cursor-pointer hover:text-white">Disclaimer</li>
+                            <li class="flex items-center gap-2 cursor-pointer hover:text-white">
+                                Careers
+                                <span class="px-2 py-0.5 text-xs font-semibold text-white bg-indigo-600 rounded-full">
+                We’re hiring!
+              </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- SUPPORT -->
+                    <div class="text-left lg:text-left">
+                        <h4 class="mb-4 text-sm font-semibold text-white uppercase">Support</h4>
+                        <ul class="space-y-3">
+                            <li class="cursor-pointer hover:text-white">Get Listed</li>
+                            <li class="cursor-pointer hover:text-white">Request Form</li>
+                            <li class="cursor-pointer hover:text-white">Contact Support</li>
+                            <li class="cursor-pointer hover:text-white">FAQ</li>
+                            <li class="cursor-pointer hover:text-white">Glossary</li>
+                        </ul>
+                    </div>
+
+                    <!-- SOCIALS -->
+                    <div class="text-left lg:text-left">
+                        <h4 class="mb-4 text-sm font-semibold text-white uppercase">Socials</h4>
+                        <ul class="space-y-3">
+                            <li class="cursor-pointer hover:text-white">X (Twitter)</li>
+                            <li class="cursor-pointer hover:text-white">Telegram</li>
+                            <li class="cursor-pointer hover:text-white">Instagram</li>
+                            <li class="cursor-pointer hover:text-white">Facebook</li>
+                            <li class="cursor-pointer hover:text-white">Reddit</li>
+                            <li class="cursor-pointer hover:text-white">LinkedIn</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="pt-10 mt-16 text-sm text-left text-gray-500 border-t border-[#1c2433]">
+            © 2025 CoinMarketCap CLONE. All rights reserved CJ.
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
