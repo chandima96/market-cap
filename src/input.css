@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+/* @theme {
+  --breakpoint-custom: 1200px;
+} */
+
+.scro::-webkit-scrollbar {
+  display: none;
+}
